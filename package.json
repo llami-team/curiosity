@@ -1,0 +1,26 @@
+{
+  "name": "curiosity",
+  "version": "1.0.0",
+  "description": "⚗️ Curiosity about consciousness",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmmhmmhm/curiosity.git"
+  },
+  "author": "hmmhmmhm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmmhmmhm/curiosity/issues"
+  },
+  "homepage": "https://github.com/hmmhmmhm/curiosity#readme",
+  "dependencies": {
+    "@types/node": "^12.7.2",
+    "folder-logger": "^1.0.4",
+    "ts-node": "^8.3.0",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3"
+  }
+}
