@@ -1,0 +1,2 @@
+# curiosity
+⚗️ Curiosity about consciousness
