@@ -1,5 +1,6 @@
 import { IAlias } from './alias'
 import { IEssence } from './essence'
+import { ICondition } from './condition'
 
 /**
  * A는 B라는 말은 거짓이다. (상태)
@@ -7,6 +8,6 @@ import { IEssence } from './essence'
 export interface IState {
     alias: IAlias
     targets: IEssence[]
-    isAffected: boolean
-    conditions
+    boolean: boolean
+    conditions: ICondition[]
 }
