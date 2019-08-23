@@ -1,232 +1,258 @@
-# ⚗️ Curiosity
+# ⚗️ Curiosity (WIP)
 
+> This project is a project created to explore whether artificial embodiment of human consciousness is possible (like a Artificial Consciousness), not using conventional neural network system, but following the theory of expert system advocated by Marvin Minsky.
 
+## Abstract
+
+Conventional artificial intelligence relies on the implementation of all intelligence on statistical models using artificial neural networks. But these conventional artificial intelligence are similar to simulating intelligence or consciousness by statistics, rather than exploring the principles of consciousness.
+
+Recognizing and identifying things is the role of intelligence, and the category of consciousness that a person is experiencing lies in things like logic and emotion. In other words, this project was initiated under the assumption that consciousness and intelligence were in different categories.
 
 ## Layer System
 
+This project hierarchically classifies the minimum elements required to construct consciousness. (Like TCP/IP Layer)
+
 ### Layer 0
 
-- 연산 Calculate
+It is assumed that layer 0 is constructed by a commonly called general-purpose computing machine, computer, or CPU.
+
+- Calculate
 
 ### Layer 1
 
-- 감정 emotion
-- 논리 logic
-- 언어 language
-- 결정 decision
+Layer 1 is the most basic step of consciousness to be developed in this project. Assume that the most basic and independent compositions of consciousness are constructed on the Layer 1.
+
+- Emotion
+- Logic
+- Language
+- Decision
 
 ### Layer 2
 
-- 계획 plan
-- 행동 action
-- 주의 caution
-- 기대 expect
-- 판단 judgment
-- 대화 talk
-- 설명 describe
+Layer 2 acts like an ego of human consciousness. Each element of Layer 2 is constructed based on all the elements configured in Layer 1. For example, all elements of Layer 1 are used in the planning process.
+
+- Plan
+- Action
+- Caution
+- Expect
+- Judgment
+- Talk
+- Describe
 
 ### Layer 3
 
-- 학습 learning
-- 인지 recognition
+Layer 3 serves as a tool for developing consciousness on its own and achieving its purpose. Each element of Layer 3 is constructed based on all the elements configured in Layer 2.
+
+- Learning
+- Recognition
 
 
 
 ## Layer 1
 
-### 감정 Emotion​
-
-> 긍정부정(positive negation) 모델 (양가감정)
-
-#### Emotion 1
-
-​	\+ 행복 happiness
-
-​	\- 슬픔 sadness
-
-#### Emotion 2
-
-​	\+ 기대 expectation
-
-​	\- 실망 disappoint
-
-#### Emotion 3
-
-​	\+ 사랑 love
-
-​	\- 분노 anger
-
-#### Emotion 4
-
-​	\+ 놀람 surprise
-
-​	\- 공포 panic
-
-#### Emotion 5
-
-​	\+ 안정 comfort
-
-​	\- 불안 anxiety
-
-#### Emotion 6
-
-​	\+ 동경 yearn
-
-​	\- 혐오 disgust
-
-#### Emotion 7
-
-​	\+ 열망 desire
-
-​	\- 수치 shame
+Layer 1 consists of the most primitive and independent modules. However, they can refer to each other between Layer 1 elements as necessary.
 
 
 
-### 논리 Logic
+### Language
 
-> 어떠한 대상에게 적용가능한 논리
+> The language module aims to establish an architecture that can clearly and continuously define the association between words and words.
+
+Language acts as a medium to make up information about any Essence or Existence.
 
 
 
-#### 연역 deduction
+#### Essence
 
-> 주장의 확실성을 검증하는데 목적이 있고, 전제가 참이면 결과도 참이다.
+The essence does not change or disappear, it is the most fundamental and unique information. In order for an Existence (such as a Subject or Object) to exist, the essence is essential.
 
-##### 정리
+
+
+##### Subcomponent of essence
+
+###### State
+
+- Ex. The saying A is B is lie.
+
+###### Type
+
+- Ex. A is B.
+
+###### Relation
+
+- Ex. A is family with B.
+
+
+
+##### Attributes of essence
+
+> The subcomponents of all essence may be limited by the following attributes:
+
+###### Condition
+
+- Ex. A is only in the same age as B. (Relation + Conditions)
+
+
+
+#### Existence
+
+Existence is the concept of time added to Essence. Every time Essence changes, new Essence emerges as it changes, and all Essence is unique information that is individually distinct.
+
+
+
+##### Subcomponent of Existence
+
+- Essences (Essences of the past that have changed over time)
+
+
+
+##### Q. Why should all Essence be keep memory in Existence?
+
+Essence is a unique being that cannot be changed. Just a new Essence is created and replaced within the Existence. Remembering this becomes information that remembers the state of the past. While it may be necessary not to remember the past artificially, additional development can be made only by remembering the past.
+
+
+
+##### Q. Why are conditions present in the subcomponents of the essence?
+
+The conditions that lead Existence to re-reference any other Essence shall be within Essence itself.
+
+
+
+##### Q. Why is the language module unwilling to use existing classifications, such as conventional nouns or adjectives?
+
+I think the reason why conventional Morpheme analysts couldn't be all-around is because they're obsessed with the relationship of superficial words. Before classifying the relationship of a word, I think that a step-by-step approach should be made to categorize the most fundamental and core minimum properties that the word points to, and then form a word system on it so that interpretation of the language by the program can take place.
+
+
+
+
+
+##### Q. Is this language module aimed at Universal Grammar (UG)?
+
+No, It is not possible to implement this module by itself. This module aims to find an essential configuration that logically separates the correlations of words.
+
+
+
+##### Logical Learning plan
+
+> The goal is to find out how much basic logic is needed to enable basic logical learning through the translation and inductive processes through textual conversations with people.
+
+1. Learning about Essence
+   - Define the subcomponents of Essence (status, type, relationship).
+2. Learning about Existence
+   - Define the relationships of several Existence.
+
+
+
+### Logic
+
+> Series of processes to inferring an Essence from an Existence, or to define a new Existence from Essence, or to determine the true lie of a condition.
+
+
+
+#### Deduction
+
+> The purpose is to verify the veracity of the argument, and if the premise is true, the result is true.
+
+##### Summarize
 
 - A=B
 - B=C
 - C=A
 
-##### 설명
+##### Description
 
-- 원칙= **사람**은 **생명체**이다
-- 사례= **생명체**는 **밥**을 먹는다
-- 결과= **사람은** **밥**을 먹어야한다.
+- Principle: **Human** is a **creature**.
+- Case: **Creatures** eat food.
+- Result: **Human** should eat food.
 
-##### 예외정의
+##### Exception case
 
-- 결과가 맞지 않는다면.
-  1. 사례에 조건이 부족하거나
-  2. 잘못된 사례이거나
-  3. 잘못된 원칙이거나
+- If the result is not correct
+  1. There are insufficient **conditions** in the case,
+  2. Either it's the wrong case.
+  3. Either it's a wrong principle.
 
-##### 예외시 조건 추가 예시
+##### Example of adding conditions on exception
 
-- 사실2 += 생명체는 (영양분이 부족할때) 밥을 먹는다.
-- 사실2 += 생명체는 (영양분이 과도하게 소비되기 전) 밥을 먹는다.
+- Case1 = Creatures eat food. (When it lacks nutrients)
+- Case2 = Creatures eat food. (Before nutrients are consumed excessively)
 
 
 
-#### 귀납 induction
+#### Induction
 
-> 전제의 주장을 넘어 지식을 확장시키는데 목적이 있다. 어느정도 논리의 비약을 허용한다. 귀납법 만으로는 개연성 있는 가설을 만들 뿐이지 논리적 필연성을 갖진 못한다.
+> It is aimed at expanding knowledge beyond the argument of the premise. This allows some leap of logic in the process. An induction can create a probable hypothesis, but it does not have logical inevitability.
 
-##### 정리
+##### Summarize
 
 - A=D
 - B=D
 - C=D?
 
-##### 설명
+##### Description
 
-- 사례1= 길가의 고양이는 츄르를 좋아한다.
-- 사례2= 옆집의 고양이는 츄르를 좋아한다.
-- 추론 = 모든 고양이는 츄르를 좋아할 것이다.
+- Case 1= The cat on the street likes chur.
+- Case 2= The cat next door likes chur.
+- Inference = All cats will like chur.
 
-#####   분류
+#####   Classification
 
-- 사례가 모두 검증되었을 때
-  - 완전귀납 complete induction
+- When all cases have been validated
+  - Complete induction
 
-- 사례가 일부 검증되지 않았을 때
-  - 불완전귀납 imcomplete induction
+- When some of the cases have not been validated
+  - Imcomplete induction
 
-- 변증법
-
-
-
-### 언어 language
-
-> 단어와 단어 사이의 연관관계를 명확히 지속적으로 정의 해나갈 수 있는 구조의 정립
-
-언어는 어떠한 본질 또는 실체에 관한 정보를 구성하는 매개체로써 작용한다.
-
-#### 본질 Essence
-
-본질은 변하거나 사라지지 않는 **주체(Subject)** 또는 **객체(Object)** 와 같은 실체가 존재하는데 필요한 근본적이며 고유한 정보이다.
-
-##### 본질의 하위요소
-
-- 상태 state
-  - A는 B라는 말은 거짓이다. (상태)
-- 유형 type
-  - A는 B이다. (유형)
-- 관계 relation
-  - A는 B와 가족이다. (관계)
-
-##### 본질의 특성
-
-> 모든 본질의 하위요소는 다음 특성에 의해 제한될 수 있다.
-
-- 조건 condition
-  - A는 B와 나이가 같을때만 동급이다. (관계/조건)
-
-#### 실체 Existence
-
-실체는 본질에 시간의 개념이 더해진 것이다. 실체가 변할때마다, 변함에 따른 새로운 본질이 생겨나며, 모든 본질은 각기 개별적으로 구분되는 고유적 정보이다.
-
-##### 실체의 하위요소
-
-- 본질들 (시간적으로 변화된 모든 실체였던 본질들)
+- Dialectic
 
 
 
-##### 정리
+### Emotion​
 
-```
-A는 B이다. (유형)
-A는 B와 가족이다(관계)
-A가 B라는 말은 거짓이다.(상태)
+Emotions are clearly in the process of defining what decisions are being made. Also emotions can also be classified as being made up of positive and negative models. and when the emotions are applied to an object, depending on the subcomponent of the subject, different emotions can act on one object simultaneously.
 
-Condition
-A는 B와 나이가 같을때만 동급이다. (?)
-어떠한 본질의 하위요소가 정의될 때에 어떠한 상태로 변화될지에 따른 조건이 존재한다.
-즉 조건은 본질에 해당하지 아니하고 실체에 적용된다?
+#### Emotion 1
 
-물은 (온도가 높아지면) 기화된다.
-이때 물 이라는 본질이 기화될 수 있다는 조건은 본질적 요소가 아닌가?
-물이 기화되는 조건이 본질마다 다를 수 있다면, 이는 본질적 요소이다.
+​	`+` Happiness
+
+​	`-` Sadness
+
+#### Emotion 2
+
+​	`+` Expectation
+
+​	`-` Disappoint
+
+#### Emotion 3
+
+​	`+` Love
+
+​	`-` Anger
+
+#### Emotion 4
+
+​	`+` Surprise
+
+​	`-` Panic
+
+#### Emotion 5
+
+​	`+` Comfort
+
+​	`-` Anxiety
+
+#### Emotion 6
+
+​	`+` Yearn
+
+​	`-` Disgust
+
+#### Emotion 7
+
+​	`+` Desire
+
+​	`-` Shame
 
 
-뇌손상 환자가 시계를 그리지 못하는 것에서 아직 확인치 못한 요소를 유추할 수 있지 않을까,
-시계=> 시간, 공간, 본질
 
-본질적 요소는 무엇인가
-- 시침과 분침의 위치와 크기 (공간)
-- 시간 글
-1,2,3,4,5,6,7,8,9,10,11,12
-- 시간의 개념
-
-프로그래밍적 요소에서 Layer 1의 논리 요소를 유추할 수 있지 않을까?
-- Enum 본질의 유형?
-- JSON
-- 
-```
-
-
-
-##### 논리학습 계획
-
-> 사람들과 문자적 대화를 통해서 연역과 귀납과정을 통해서 기초적인 논리학습이 가능하기 까지 필요한 기초 논리의 구성은 얼마만큼 인지를 파악하는 것이 목표이다.
-
-1. 본질에 대한 학습
-   - 본질의 하위요소 (상태, 유형, 관계)를 정리한다.
-2. 실체에 대한 학습
-   - 실체를 통해 본질의 하위요소들을 조정해가며 새로운 본질을 정리한다.
-
-
-
-### 결정 decision
-
-  어떠한 자신만의 취향을 결정하는 것?
+### Decision

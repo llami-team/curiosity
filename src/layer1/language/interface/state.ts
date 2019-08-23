@@ -9,5 +9,5 @@ export interface IState {
     alias: IAlias
     targets: IEssence[]
     boolean: boolean
-    conditions: ICondition[]
+    cond1itions: ICondition[]
 }
