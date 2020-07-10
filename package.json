@@ -18,9 +18,14 @@
   "homepage": "https://github.com/hmmhmmhm/curiosity#readme",
   "dependencies": {
     "@types/node": "^12.7.2",
-    "folder-logger": "^1.0.4",
+    "folder-logger": "^1.0.9",
+    "level": "^6.0.1",
+    "matcher": "^3.0.0",
     "ts-node": "^8.3.0",
     "tslib": "^1.10.0",
     "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/levelup": "^4.3.0"
   }
 }

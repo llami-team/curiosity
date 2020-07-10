@@ -145,3 +145,26 @@ const colorRedEssence: Layer1.IEssence = {
 
 // ? types 가 현재는 자식 essence 에만 남지만
 // ? 부모 essence 에도 역참조 ref가 남아야할 것으로 보입니다.
+
+
+// ! 사과는 빨갛다.
+// ! 사과의 (색상은) 빨갛다.
+// * A는 B다 와 같이
+// * 사과는 빨갛다 로 표현된다면
+// * 사과의 색상은 빨갛다 로 자동 명시되어야맞는가?
+
+// * 사과는 빨갛다.
+const redColorType: Layer1.IType = {
+    alias: colorRedAlias,
+    essence: colorRedEssence,
+}
+appleEssence.types.push(redColorType)
+// ? 각 types 를 참조하고 있는 객체들에 대한 역 인덱싱도 필요할 것으로 보입니다.
+// ? 어떤 내부의 빠른 처리를 위한 별도 인덱스를 구현해야합니다.
+
+
+/**
+ * TODO 사과의 겉은 빨갛지만 속은 다른 색상이고,
+ * TODO 초록색인 풋사과도 있고 시간에 따라 변하기도 합니다.
+ * TODO 이러한 것들도 모델링으로 표현할 수 있어야 합니다.
+ */
