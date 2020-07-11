@@ -1,27 +1,23 @@
 import { LevelUp } from 'levelup'
 import { IAlias } from '../interface'
 
-// ? 사과라는 이름의 별칭이 너무 많아졌을때
-// ? 가장 많이 참조된 별칭을 참조하는 로직 ??
-// ? ( 또한 type 이나 relation 에 기반한
-// ?   유추를 통해 가장 알맞는 별칭을 찾아내는 로직 )
 export const _DB_ALIAS_ID_NUMBER_ID = '_id_counts'
 
 export interface ICreateAliasOption {
     db: LevelUp
     names: string[]
 }
-export interface IGetIdByAlias {
+export interface IReadAliasById {
     db: LevelUp
     id: number
+}
+export interface IReadAliasByNames {
+    db: LevelUp
+    aliasNames: string[]
 }
 export interface IUpdateAlias {
     db: LevelUp
     alias: IAlias
-}
-export interface IGetAliasById {
-    db: LevelUp
-    aliasNames: string[]
 }
 
 /**
@@ -45,9 +41,6 @@ export const createAlias = async (option: ICreateAliasOption) => {
     }
 }
 
-export const updateAlias = async (option: IUpdateAlias) => {
-    //
-}
 
 /**
  * @description
@@ -55,7 +48,7 @@ export const updateAlias = async (option: IUpdateAlias) => {
  * 
  * @param option
  */
-export const getIdByAlias = async (option: IGetIdByAlias) => {
+export const readAliasById = async (option: IReadAliasById) => {
     try {
         const _alias = await option.db.get(`${option.id}`)
         if (!_alias) throw new Error()
@@ -77,7 +70,7 @@ export const getIdByAlias = async (option: IGetIdByAlias) => {
  * @param option 
  * @returns 별칭을 반환합니다.
  */
-export const getAliasById = async (option: IGetAliasById) => {
+export const readAliasByNames = async (option: IReadAliasByNames) => {
     return new Promise<IAlias | undefined>((resolve, reject) => {
         let isFounded = false
         const stream = option.db.createReadStream({
@@ -117,10 +110,10 @@ export const getAliasById = async (option: IGetAliasById) => {
  * @param option 
  * @returns 일치하는 모든 별칭들이 반환됩니다.
  */
-export const getAllMatchAliasById = async (option: IGetAliasById) => {
+export const readAllMatchAliasById = async (option: IReadAliasByNames) => {
     return new Promise<IAlias[]>((resolve, reject) => {
         let allMatchAlias: IAlias[] = []
-        const stream = option.db.createReadStream({
+        option.db.createReadStream({
             keys: true,
             values: true,
         }).on('data', ({ key, value }) => {
@@ -146,6 +139,14 @@ export const getAllMatchAliasById = async (option: IGetAliasById) => {
     })
 }
 
+export const updateAlias = async (option: IUpdateAlias) => {
+    try {
+        await option.db.put(`${option.alias.id}`, JSON.stringify(option.alias))
+        return true
+    } catch (e) {
+        return false
+    }
+}
 /**
  * @description
  * 별칭의 색인번호를 새로 발급합니다.
@@ -161,3 +162,7 @@ export const _generateNewAliasId = async (db: LevelUp) => {
     await db.put(_DB_ALIAS_ID_NUMBER_ID, String(newId))
     return newId
 }
+
+// ! delete 는 현 단계에선 구조상 만들지 않습니다.
+// ! 사용 빈도에 따라 Long-Term Storage 로 옮기고,
+// ! 일정 주기가 넘어가는 조건에 따라 삭제되는 형태로 수정관리 예정
