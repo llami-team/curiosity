@@ -40,8 +40,8 @@ const fruitEssence: Layer1.IEssence = {
 
 // * "사과는 과일이다"
 const appleType: Layer1.IType = {
-    alias: fruitAlias,
-    essence: fruitEssence,
+    original: fruitEssence,
+    derived: appleEssence,
 }
 appleEssence.types.push(appleType)
 
@@ -119,13 +119,6 @@ const colorEssence: Layer1.IEssence = {
 // ? Alias 를 통해서 원하는 Type 이나 무언가를 가져오는 resolver 필요,
 // ? Alias 가 맞는지를 확인하기 위해서 간단한 검증도 필요할 것으로 보입니다.
 
-// * 색상을 타입화합니다.
-const colorType: Layer1.IType = {
-    alias: colorAlias,
-    essence: colorEssence
-}
-
-
 // * 붉은 색상에 대한 별칭을 색인합니다.
 const colorRedAlias: Layer1.IAlias = {
     id: testIds++,
@@ -140,8 +133,16 @@ const colorRedEssence: Layer1.IEssence = {
     alias: colorRedAlias,
     relations: [],
     states: [],
-    types: [colorType],
+    types: [],
 }
+
+// * 색상을 타입화합니다.
+const colorType: Layer1.IType = {
+    original: colorEssence,
+    derived: colorRedEssence,
+}
+colorRedEssence.types.push(colorType)
+
 
 // ? types 가 현재는 자식 essence 에만 남지만
 // ? 부모 essence 에도 역참조 ref가 남아야할 것으로 보입니다.
