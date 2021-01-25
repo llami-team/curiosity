@@ -4,7 +4,8 @@
   "description": "⚗️ Curiosity about consciousness",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "test1": "ts-node \"src/test/01 - Interface/apple.ts\""
   },
   "repository": {
     "type": "git",

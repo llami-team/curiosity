@@ -1,22 +1,21 @@
-import { LevelUp } from 'levelup'
-import { IAlias } from '../interface'
+import { IAlias, IDatabase } from '../interface'
 
 export const _DB_ALIAS_ID_NUMBER_ID = '_id_counts'
 
 export interface ICreateAliasOption {
-    db: LevelUp
+    db: IDatabase
     names: string[]
 }
 export interface IReadAliasById {
-    db: LevelUp
+    db: IDatabase
     id: number
 }
 export interface IReadAliasByNames {
-    db: LevelUp
+    db: IDatabase
     aliasNames: string[]
 }
 export interface IUpdateAlias {
-    db: LevelUp
+    db: IDatabase
     alias: IAlias
 }
 
@@ -33,7 +32,7 @@ export const createAlias = async (option: ICreateAliasOption) => {
             id: aliasId,
             names: option.names,
         }
-        await option.db.put(`${aliasId}`, JSON.stringify(alias))
+        await option.db.alias.put(`${aliasId}`, JSON.stringify(alias))
         return aliasId
     } catch (e) {
         console.log(e)
@@ -50,7 +49,7 @@ export const createAlias = async (option: ICreateAliasOption) => {
  */
 export const readAliasById = async (option: IReadAliasById) => {
     try {
-        const _alias = await option.db.get(`${option.id}`)
+        const _alias = await option.db.alias.get(`${option.id}`)
         if (!_alias) throw new Error()
 
         const alias: IAlias = JSON.parse(_alias)
@@ -73,7 +72,7 @@ export const readAliasById = async (option: IReadAliasById) => {
 export const readAliasByNames = async (option: IReadAliasByNames) => {
     return new Promise<IAlias | undefined>((resolve, reject) => {
         let isFounded = false
-        const stream = option.db.createReadStream({
+        const stream = option.db.alias.createReadStream({
             keys: true,
             values: true,
         }).on('data', ({ key, value }) => {
@@ -113,7 +112,7 @@ export const readAliasByNames = async (option: IReadAliasByNames) => {
 export const readAllMatchAliasById = async (option: IReadAliasByNames) => {
     return new Promise<IAlias[]>((resolve, reject) => {
         let allMatchAlias: IAlias[] = []
-        option.db.createReadStream({
+        option.db.alias.createReadStream({
             keys: true,
             values: true,
         }).on('data', ({ key, value }) => {
@@ -141,7 +140,7 @@ export const readAllMatchAliasById = async (option: IReadAliasByNames) => {
 
 export const updateAlias = async (option: IUpdateAlias) => {
     try {
-        await option.db.put(`${option.alias.id}`, JSON.stringify(option.alias))
+        await option.db.alias.put(`${option.alias.id}`, JSON.stringify(option.alias))
         return true
     } catch (e) {
         return false
@@ -153,13 +152,13 @@ export const updateAlias = async (option: IUpdateAlias) => {
  * 
  * @returns 사용가능한 고유한 색인번호가 반환됩니다.
  */
-export const _generateNewAliasId = async (db: LevelUp) => {
-    const _beforeId = await db.get(_DB_ALIAS_ID_NUMBER_ID)
+export const _generateNewAliasId = async (db: IDatabase) => {
+    const _beforeId = await db.alias.get(_DB_ALIAS_ID_NUMBER_ID)
     let beforeId: number = -1
     if (beforeId) beforeId = Number(_beforeId)
 
     const newId = beforeId + 1
-    await db.put(_DB_ALIAS_ID_NUMBER_ID, String(newId))
+    await db.alias.put(_DB_ALIAS_ID_NUMBER_ID, String(newId))
     return newId
 }
 

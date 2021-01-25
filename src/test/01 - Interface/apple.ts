@@ -3,56 +3,58 @@ import * as Layer1 from '../../layer1'
 // * 식별 번호를 관리합니다.
 let testIds = 0
 
+// !
 // ! 사과의 본질 생성 시작
 // * 사과 본질의 별칭을 색인합니다.
 const appleAlias: Layer1.IAlias = {
-    id: testIds++,
-    names: [
-        '사과',
-    ]
+  id: testIds++,
+  names: ['사과']
 }
 
 // * 사과의 본질을 모델화합니다.
 const appleEssence: Layer1.IEssence = {
-    alias: appleAlias,
-    relations: [],
-    states: [],
-    types: [],
+  alias: appleAlias,
+  relations: [],
+  states: [],
+  types: []
 }
 
-
+// !
 // ! 논리 표현 목표대상 -> 사과는 과일이다
 // * 과일 본질의 별칭을 색인합니다.
 const fruitAlias: Layer1.IAlias = {
-    id: testIds++,
-    names: [
-        '과일',
-    ]
+  id: testIds++,
+  names: ['과일']
 }
 
 // * 과일의 본질을 모델화합니다.
 const fruitEssence: Layer1.IEssence = {
-    alias: fruitAlias,
-    relations: [],
-    states: [],
-    types: [],
+  alias: fruitAlias,
+  relations: [],
+  states: [],
+  types: []
 }
 
 // * "사과는 과일이다"
 const appleType: Layer1.IType = {
-    original: fruitEssence,
-    derived: appleEssence,
+  original: fruitEssence,
+  derived: appleEssence
 }
 appleEssence.types.push(appleType)
-
 
 // ! 논리 표현 목표대상 - 사과는 맛있다
 // * 맛의 본질의 별칭을 색인합니다.
 const tastyAlias: Layer1.IAlias = {
-    id: testIds++,
-    names: [
-        '맛'
-    ],
+  id: testIds++,
+  names: ['맛']
+}
+
+// * 맛의 본질을 모델화합니다.
+const tastyEssence: Layer1.IEssence = {
+  alias: tastyAlias,
+  relations: [],
+  states: [],
+  types: []
 }
 
 // ! 논리 표현 목표 대상 -> 사과는 맛있다.
@@ -66,26 +68,24 @@ const tastyAlias: Layer1.IAlias = {
 
 // * 나에 대한 별칭을 색인합니다.
 const myAlias: Layer1.IAlias = {
-    id: testIds++,
-    names: [
-        '나',
-    ],
+  id: testIds++,
+  names: ['나']
 }
 
 // * 나의 본질을 모델화합니다.
 const myEssence: Layer1.IEssence = {
-    alias: myAlias,
-    relations: [],
-    states: [],
-    types: [],
+  alias: myAlias,
+  relations: [],
+  states: [],
+  types: []
 }
 
 // * 사과는 (나에게) 맛있는 상태이다.
 const tastyState: Layer1.IState = {
-    alias: tastyAlias,
-    boolean: true,
-    cond1itions: [],
-    targets: [appleEssence],
+  essence: tastyEssence,
+  affected: [appleEssence],
+  boolean: true,
+  cond1itions: []
 }
 myEssence.states.push(tastyState)
 
@@ -96,10 +96,8 @@ myEssence.states.push(tastyState)
 
 // * 색상에 대한 별칭을 색인합니다.
 const colorAlias: Layer1.IAlias = {
-    id: testIds++,
-    names: [
-        '색상',
-    ]
+  id: testIds++,
+  names: ['색상']
 }
 
 // ? 색상의 순서가 여러 조건에 따라 정의되는 방법?
@@ -109,44 +107,37 @@ const colorAlias: Layer1.IAlias = {
 
 // * 색상의 본질을 모델화합니다.
 const colorEssence: Layer1.IEssence = {
-    alias: colorAlias,
-    relations: [],
-    states: [],
-    types: [],
+  alias: colorAlias,
+  relations: [],
+  states: [],
+  types: []
 }
-
 
 // ? Alias 를 통해서 원하는 Type 이나 무언가를 가져오는 resolver 필요,
 // ? Alias 가 맞는지를 확인하기 위해서 간단한 검증도 필요할 것으로 보입니다.
 
 // * 붉은 색상에 대한 별칭을 색인합니다.
 const colorRedAlias: Layer1.IAlias = {
-    id: testIds++,
-    names: [
-        '빨강',
-        '빨간',
-        '붉은',
-    ]
+  id: testIds++,
+  names: ['빨강', '빨간', '붉은']
 }
 // * 붉은색의 본질을 모델화합니다.
 const colorRedEssence: Layer1.IEssence = {
-    alias: colorRedAlias,
-    relations: [],
-    states: [],
-    types: [],
+  alias: colorRedAlias,
+  relations: [],
+  states: [],
+  types: []
 }
 
 // * 색상을 타입화합니다.
 const colorType: Layer1.IType = {
-    original: colorEssence,
-    derived: colorRedEssence,
+  original: colorEssence,
+  derived: colorRedEssence
 }
 colorRedEssence.types.push(colorType)
 
-
 // ? types 가 현재는 자식 essence 에만 남지만
 // ? 부모 essence 에도 역참조 ref가 남아야할 것으로 보입니다.
-
 
 // ! 사과는 빨갛다.
 // ! 사과의 (색상은) 빨갛다.
@@ -156,13 +147,12 @@ colorRedEssence.types.push(colorType)
 
 // * 사과는 빨갛다.
 const redColorType: Layer1.IType = {
-    alias: colorRedAlias,
-    essence: colorRedEssence,
+  original: colorEssence,
+  derived: colorRedEssence
 }
 appleEssence.types.push(redColorType)
 // ? 각 types 를 참조하고 있는 객체들에 대한 역 인덱싱도 필요할 것으로 보입니다.
 // ? 어떤 내부의 빠른 처리를 위한 별도 인덱스를 구현해야합니다.
-
 
 /**
  * TODO 사과의 겉은 빨갛지만 속은 다른 색상이고,

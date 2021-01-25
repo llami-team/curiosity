@@ -277,3 +277,8 @@ Essence is a unique being that cannot be changed. Just a new Essence is created 
 - 학습 (Learning)
 - 인식 (Recognition)
 
+
+
+
+
+ㅁA

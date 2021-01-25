@@ -28,7 +28,6 @@ export interface IRelation {
     affected: IEssence[]
 }
 
-
 // ? 과자와 치킨은 음식이다.
 // ? 철수와 영희는 연인이다.
 
@@ -36,3 +35,5 @@ export interface IRelation {
 // ? 과자와 치킨외에 다른음식이 있다고 판단하면서
 // ? 동시에 철수와 영희에 대해선 그 둘에 사이에 한해서만 
 // ? 연인이라는 관계가 적용된다고 바로 이해할 수 있는가?
+// ! Essence 의 타입이 어떻게 쓰이는지 참조 추가?
+// !유형(Type) / 관계(Relation) / 상태(State)
