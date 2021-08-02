@@ -36,5 +36,5 @@ export interface IState {
      * @description
      * * 상태가 작용되는 조건들
      */
-    cond1itions: ICondition[]
+    conditions: ICondition[]
 }
